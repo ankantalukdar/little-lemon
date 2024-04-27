@@ -1,0 +1,78 @@
+.font-regular {
+  font-family: "Inria Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-bold {
+  font-family: "Inria Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ll-color {
+  background-color: rgb(243, 205, 47);
+}
+
+.btn-clr {
+  background-color: #fcfcfd;
+}
+
+.btn-clr:hover {
+  background-color: rgb(243, 205, 47);
+}
+
+
+/* need modification */
+/* need modification */
+/* need modification */
+/* need modification */
+.glow-border:hover {
+  background-color: #ffd700;
+  border: 2px solid transparent; /* Set initial border */
+  border-radius: 5px; /* Add border radius */
+  animation: glow 1s infinite alternate; /* Apply glow animation */
+}
+
+@keyframes glow {
+  0% {
+      box-shadow: 0 0 10px #fff; /* Initial glow effect */
+  }
+  100% {
+      box-shadow: 0 0 20px #ffd700; /* Final glow effect */
+  }
+}
+
+.no-margin {
+    margin: 0;
+  }
+
+.hero-info {
+  max-width: 33.33%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-body p {
+  flex-grow: 1; /* Allow the paragraph to expand to fill the available space */
+}
+
+.btn {
+  align-self: flex-start;
+  margin-top: auto; /* Push the button to the bottom of the card body */
+}
+
+.review-image img {
+  border-radius: 50px;
+}

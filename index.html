@@ -20,11 +20,11 @@
       <div class="d-flex align-items-center gap-3">
         <ul class="list-unstyled d-flex gap-3 mb-0">
           <li><a href="#" class="text-decoration-none text-black">Home</a></li>
-          <li><a href="#" class="text-decoration-none text-black">About</a></li>
-          <li><a href="#" class="text-decoration-none text-black">Menu</a></li>
+          <li><a href="#menu" class="text-decoration-none text-black">Menu</a></li>
+          <li><a href="#about" class="text-decoration-none text-black">About</a></li>
           <li><a href="#" class="text-decoration-none text-black">Reservation</a></li>
         </ul>
-        <button class="btn btn-clr border border-1 px-4 fs-5 font-bold">Login</button>
+        <button id="loginBtn" class="btn btn-clr border border-1 px-4 fs-5 font-bold">Login</button>
       </div>
     </div>
   </nav>
@@ -39,7 +39,7 @@
         <h1 class="font-bold">Little Lemon</h1>
         <p class="font-bold">Based in Chicago, Illinois</p>
         <p>Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-        <button class="btn ll-color glow-border border border-1 mt-4 px-4 fs-4 font-bold">Reserve a Table</button>
+        <button class="btn ll-color border border-1 mt-4 px-4 fs-4 font-bold">Reserve a Table</button>
       </div>
       <div>
         <img src="assets/images/restaurant.jpg" class="" width="500px" alt="">
@@ -74,9 +74,9 @@
                   </div>
                 </div>
                 <p class="fs-5 pb-3 font-regular">Vegan baklava ice cream sandwiched between two layers of phyllo pastry, lightly dusted with powdered sugar.</p>
-                <button class="btn p-2 px-3 fw-semibold font-bold fs-5">
+                <button class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold fs-5">
                   Order a delivery
-                  <span class="bi bi-cart-fill"></span>
+                  <span class="bi bi-cart-fill ps-2"></span>
                 </button>
               </div>
             </div>
@@ -96,9 +96,9 @@
                   </div>
                 </div>
                 <p class="fs-5 pb-3 font-regular">Grilled bread topped with a savory mixture of eggplant, tomatoes, capers, and balsamic reduction.</p>
-                <button class="btn p-2 px-3 fw-semibold font-bold fs-5">
+                <button class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold fs-5">
                   Order a delivery
-                  <span class="bi bi-cart-fill"></span>
+                  <span class="bi bi-cart-fill ps-2"></span>
                 </button>
               </div>
             </div>
@@ -118,9 +118,9 @@
                   </div>
                 </div>
                 <p class="fs-5 pb-3 font-regular">A hearty breakfast bowl featuring seasoned tofu scramble, roasted potatoes, sautéed spinach, and kalamata olive tapenade.</p>
-                <button class="btn p-2 px-3 fw-semibold font-bold fs-5">
+                <button class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold fs-5">
                   Order a delivery
-                  <span class="bi bi-cart-fill"></span>
+                  <span class="bi bi-cart-fill ps-2"></span>
                 </button>
               </div>
             </div>
@@ -150,7 +150,7 @@
               <div class="col">
                 <!-- Username and Ratings -->
                 <div class="review-details d-flex flex-column align-items-end">
-                  <div class="review-username">John Doe</div>
+                  <div class="review-username">Gia Doe</div>
                   <div class="review-ratings">4.5 Star</div>
                 </div>
               </div>
@@ -239,7 +239,7 @@
         </div>
         <div>
           <p>
-            A hearty breakfast bowl featuring seasoned tofu scramble, roasted potatoes, sautéed spinach, and kalamata olive tapenade.A hearty breakfast bowl featuring seasoned tofu scramble, roasted potatoes, sautéed spinach, and kalamata olive tapenade.
+            In Chicago, Little Lemon blends Mediterranean tradition with modern flair. Our family-owned restaurant combines timeless recipes with innovative twists for an authentic and exciting dining experience. Join us to savor the reimagined flavors of the Mediterranean. Welcome to Little Lemon, where tradition meets innovation in every bite.
           </p>
         </div>
       </div>
@@ -250,7 +250,66 @@
   </section>
   <!-- section end -->
   <!-- section end -->
+  <button id="bringToTopBtn" class="btn bring-to-top border border-1 rounded-5 p-2" style="background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+    </svg>
+  </button>
   <!-- section end -->
+<!-- Login popup modal -->
+<div class="modal font-regular" id="loginModal" style="background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content px-3 py-2 pop-up">
+      <div class="modal-body">
+        <div class="row justify-content-between">
+          <!-- Left side with image -->
+          <div class="col-md-6 background-div rounded-start">
+            <!-- Add your image here -->
+          </div>
+          <!-- Right side with login options -->
+          <div class="col-md-6">
+            <!-- Close button -->
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <h2 class="text-center font-bold mb-3">Login</h2>
+            <p class="text-center">Getting started is easy</p>
+            <!-- Social login buttons -->
+            <div class="text-center">
+              <button class="btn border border-1 mb-3 btn-clr" onclick="closeModal()">
+                <i class="bi bi-google pe-1"></i>
+                Google
+              </button>
+              <button class="btn border border-1 mb-3 btn-clr" onclick="closeModal()">
+                <i class="bi bi-facebook pe-1"></i>
+                Facebook
+              </button>
+            </div>
+            <p class="text-center">Or continue with:</p>
+            <!-- Blank form -->
+            <form class="d-flex flex-column align-items-center">
+              <div class="mb-3 form-width-mx">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="mb-3 form-width-mx">
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn border border-1 btn-block btn-clr">
+                  <i class="bi bi-box-arrow-in-left pe-1"></i>
+                  Login
+                </button>
+              </div>
+            </form>
+            <!-- Create account link -->
+            <p class="text-center mt-3">Don't have an account? <a href="#" class="text-decoration-none">Sign Up</a></p>
+            <p class="text-center fs-7 pt-4 text-secondary">By logging in, you agree to our <a href="#" class="text-decoration-none text-secondary">Terms and Conditions</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- section end -->
   <!-- section end -->
   <footer class="bg-light font-regular fs-5 border-top border-1">
@@ -265,26 +324,25 @@
           <h5 class="font-bold">Navigation</h5>
           <ul class="list-unstyled">
             <li><a href="#" class="text-decoration-none link-secondary">Home</a></li>
-            <li><a href="#about" class="text-decoration-none link-secondary">About</a></li>
             <li><a href="#menu" class="text-decoration-none link-secondary">Menu</a></li>
-            <li><a href="#" class="text-decoration-none link-secondary">Reservation</a></li>
-            <li><a href="#" class="text-decoration-none link-secondary">Order Online</a></li>
-            <li><a href="#" class="text-decoration-none link-secondary">Login</a></li>
+            <li><a href="#about" class="text-decoration-none link-secondary">About</a></li>
+            <li><a href="#reservation" class="text-decoration-none link-secondary">Reservation</a></li>
+            <li><a href="#login" class="text-decoration-none link-secondary">Login</a></li>
           </ul>
         </div>
         <div class="col">
           <h5 class="font-bold">Contact</h5>
-          <p class="no-margin text-secondary">123 Main Street, Chicago, IL, 60601</p>
-          <p class="no-margin text-secondary">Phone: (555) 123-4567</p>
-          <p class="no-margin text-secondary">Email: <a href="mailto:info@example.com" class="text-decoration-none link-secondary">contact@littlelemon.com</a></p>
+          <p class="no-margin text-secondary">Little Lemon Restaurant, Chicago, IL, 60601</p>
+          <p class="no-margin text-secondary">Phone: (555) 555-1234</p>
+          <p class="no-margin text-secondary">Email: <a href="mailto:info@example.com" class="text-decoration-none link-secondary">reach@littlelemon.com</a></p>
         </div>
         <div class="col">
           <h5 class="font-bold">Social Media</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none link-secondary">Facebook</a></li>
-            <li><a href="#" class="text-decoration-none link-secondary">Instagram</a></li>
-            <li><a href="#" class="text-decoration-none link-secondary">Twitter</a></li>
-            <li><a href="#" class="text-decoration-none link-secondary">Youtube</a></li>
+            <li><a href="https://www.facebook.com/" class="text-decoration-none link-secondary">Facebook</a></li>
+            <li><a href="https://www.instagram.com/" class="text-decoration-none link-secondary">Instagram</a></li>
+            <li><a href="https://www.x.com/" class="text-decoration-none link-secondary">Twitter (X)</a></li>
+            <li><a href="https://www.youtube.com/" class="text-decoration-none link-secondary">Youtube</a></li>
           </ul>
         </div>
       </div>
@@ -292,5 +350,6 @@
   </footer>
 <!-- script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+// Bring to top function start!!!
+// Bring to top function start!!!
+
 // Get the "bring to top" button element
 var bringToTopBtn = document.getElementById('bringToTopBtn');
 
@@ -9,10 +12,6 @@ function checkScroll() {
     bringToTopBtn.style.bottom = '-100px'; // Hide the button
   }
 }
-
-// Add event listener for scroll event
-window.addEventListener('scroll', checkScroll);
-
 
 // Function to scroll to the top when button is clicked
 function scrollToTop() {
@@ -27,6 +26,9 @@ window.addEventListener('scroll', checkScroll);
 
 // Add event listener for button click
 bringToTopBtn.addEventListener('click', scrollToTop);
+
+// Bring to top function end!!!
+// Bring to top function end!!!
 
 
 // Get the login button element
@@ -47,3 +49,22 @@ function closeModal() {
   var modalInstance = bootstrap.Modal.getInstance(modal); // Get the Bootstrap modal instance
   modalInstance.hide(); // Close the modal
 }
+
+// Get the signup button element
+var signupBtn = document.getElementById('signupBtn');
+
+// Get the signup modal element
+var signupModal = document.getElementById('signupModal');
+
+// Show signup modal when signup button is clicked
+signupBtn.addEventListener('click', function() {
+  var signupModalInstance = new bootstrap.Modal(signupModal);
+  signupModalInstance.show();
+  
+  // Hide the login modal if it's open
+  var loginModalInstance = bootstrap.Modal.getInstance(loginModal);
+  if (loginModalInstance) {
+    loginModalInstance.hide();
+  }
+});
+

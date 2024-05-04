@@ -1,6 +1,4 @@
 // Bring to top function start!!!
-// Bring to top function start!!!
-
 // Get the "bring to top" button element
 var bringToTopBtn = document.getElementById('bringToTopBtn');
 
@@ -28,14 +26,16 @@ window.addEventListener('scroll', checkScroll);
 bringToTopBtn.addEventListener('click', scrollToTop);
 
 // Bring to top function end!!!
-// Bring to top function end!!!
+// ----------------------------
 
 
+// Login popup start!
 // Get the login button element
 var loginBtn = document.getElementById('loginBtn');
-
-// Get the login modal element
 var loginModal = document.getElementById('loginModal');
+// Get the signup button element
+var signupBtn = document.getElementById('signupBtn');
+var signupModal = document.getElementById('signupModal');
 
 // Show login modal when login button is clicked
 loginBtn.addEventListener('click', function() {
@@ -43,24 +43,11 @@ loginBtn.addEventListener('click', function() {
   modal.show();
 });
 
-
-function closeModal() {
-  var modal = document.getElementById('loginModal'); // Get the modal element
-  var modalInstance = bootstrap.Modal.getInstance(modal); // Get the Bootstrap modal instance
-  modalInstance.hide(); // Close the modal
-}
-
-// Get the signup button element
-var signupBtn = document.getElementById('signupBtn');
-
-// Get the signup modal element
-var signupModal = document.getElementById('signupModal');
-
 // Show signup modal when signup button is clicked
 signupBtn.addEventListener('click', function() {
   var signupModalInstance = new bootstrap.Modal(signupModal);
   signupModalInstance.show();
-  
+
   // Hide the login modal if it's open
   var loginModalInstance = bootstrap.Modal.getInstance(loginModal);
   if (loginModalInstance) {
@@ -68,3 +55,24 @@ signupBtn.addEventListener('click', function() {
   }
 });
 
+// Show login modal when login button is clicked
+function showLoginModal() {
+  var loginModalInstance = new bootstrap.Modal(loginModal);
+  loginModalInstance.show();
+
+  // Hide the signup modal if it's open
+  var signupModalInstance = bootstrap.Modal.getInstance(signupModal);
+  if (signupModalInstance) {
+    signupModalInstance.hide();
+  }
+}
+
+// Close the modal when google and facebook button is clicked
+function closeModal() {
+  var modal = document.getElementById('loginModal');
+  var modalInstance = bootstrap.Modal.getInstance(modal);
+  modalInstance.hide();
+}
+
+// Login popup function end!!!
+// ----------------------------

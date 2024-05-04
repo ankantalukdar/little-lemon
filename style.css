@@ -10,14 +10,26 @@
   font-style: normal;
 }
 
-.bring-to-top {
-  position: fixed;
-  bottom: -100px; /* Initially hide the button */
-  right: 45px;
-  z-index: 999; /* Ensure the button appears above other content */
-  transition: bottom 0.3s; /* Add transition for smooth animation */
+.fs-7 {
+  font-size: 0.5rem;
 }
 
+.popup-image {
+  background-image: url('assets/images/pop-up-bg.jpg');
+  background-size: cover;
+  background-position: right;
+  width: 100%;
+  max-width: 355px;
+  height: 480px;
+}
+
+.bring-to-top {
+  position: fixed;
+  bottom: -100px;
+  right: 45px;
+  z-index: 999;
+  transition: bottom 0.3s;
+}
 
 .ll-color {
   background-color: rgb(243, 205, 47);
@@ -36,8 +48,8 @@
 }
 
 .no-margin {
-    margin: 0;
-  }
+  margin: 0;
+}
 
 .hero-info {
   max-width: 33.33%;
@@ -57,31 +69,18 @@
 }
 
 .card-body p {
-  flex-grow: 1; /* Allow the paragraph to expand to fill the available space */
+  flex-grow: 1;
 }
 
 .btn {
   align-self: flex-start;
-  margin-top: auto; /* Push the button to the bottom of the card body */
+  margin-top: auto;
 }
 
 .review-image img {
   border-radius: 50px;
 }
 
-.background-div {
-  background-image: url('assets/images/pop-up-bg.jpg'); /* Specify the path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-position: right; /* Center the background image */
-  width: 100%; /* Set width to 100% or any desired value */
-  max-width: 355px;
-  height: 480px; /* Set height to any desired value */
-}
-
 .form-width-mx {
   width: 80%;
-}
-
-.fs-7 {
-  font-size: 0.5rem; /* Adjust the font size as needed */
 }

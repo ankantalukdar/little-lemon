@@ -76,3 +76,78 @@ function closeModal() {
 
 // Login popup function end!!!
 // ----------------------------
+
+// Reservation popup start!
+var reservationLink = document.getElementById('reservationLink');
+var reservationModal = document.getElementById('reservationModal');
+
+// Show reservation modal when reservation link is clicked
+reservationLink.addEventListener('click', function(event) {
+  // Prevent the default link behavior (scrolling to the top of the page)
+  event.preventDefault();
+  // Create a new modal instance
+  var modal = new bootstrap.Modal(reservationModal);
+  // Show the reservation modal
+  modal.show();
+});
+
+// Close the reservation modal when close button is clicked
+function closeReservationModal() {
+  // Get the reservation modal instance
+  var modalInstance = bootstrap.Modal.getInstance(reservationModal);
+  // Hide the reservation modal
+  modalInstance.hide();
+}
+
+// Reservation popup end!!!
+// ----------------------------
+
+// Function to show confirmation message
+function showConfirmationMessage(firstName, date, time, numberOfGuests) {
+  // Log the reservation details to the console
+  console.log('Reservation Details:', { firstName, date, time, numberOfGuests });
+  // Hide the reservation modal if it's open
+  var reservationModal = document.getElementById('reservationModal');
+  var reservationModalInstance = bootstrap.Modal.getInstance(reservationModal);
+  if (reservationModalInstance) {
+    reservationModalInstance.hide();
+  }
+  // Fetch the HTML content for the confirmation modal
+  fetch('confirmation-modal.html')
+    .then(response => response.text())
+    .then(html => {
+      // Insert the HTML content into the document body
+      document.body.insertAdjacentHTML('beforeend', html);
+
+      // Show the confirmation modal
+      var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      confirmationModal.show();
+
+      // Update the placeholders with the actual data
+      document.getElementById('confirmationFirstName').textContent = firstName;
+      document.getElementById('confirmationDate').textContent = date;
+      document.getElementById('confirmationTime').textContent = time;
+      document.getElementById('confirmationNumberOfGuests').textContent = numberOfGuests;
+    });
+}
+
+
+// Select the reservation form
+const reservationForm = document.getElementById('reservationForm');
+
+// Add event listener to the reservation form submission
+reservationForm.addEventListener('submit', function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+  // Get form data
+  const formData = new FormData(reservationForm);
+  const firstName = formData.get('first_name');
+  const date = formData.get('date');
+  const time = formData.get('time');
+  const numberOfGuests = formData.get('number_of_guests');
+  // Show confirmation message
+  showConfirmationMessage(firstName, date, time, numberOfGuests);
+});
+
+// Function to show confirmation message end!!!
+// ----------------------------

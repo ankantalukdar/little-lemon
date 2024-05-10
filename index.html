@@ -23,7 +23,7 @@
           <li><a href="#" class="text-decoration-none text-black">Home</a></li>
           <li><a href="#menu" class="text-decoration-none text-black">Menu</a></li>
           <li><a href="#about" class="text-decoration-none text-black">About</a></li>
-          <li><a href="#" class="text-decoration-none text-black">Reservation</a></li>
+          <li><a href="#" class="text-decoration-none text-black" id="reservationLink">Reservation</a></li>
         </ul>
         <button id="loginBtn" class="btn btn-clr border border-1 px-4 fs-5 font-bold">Login</button>
       </div>
@@ -100,8 +100,7 @@
               <div class="d-flex justify-content-end">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <h2 class="text-center font-bold mb-3">Sign Up</h2>
-              <p class="text-center">Join us now!</p>
+              <h2 class="text-center font-bold mb-3 pb-4">Sign Up</h2>
               <!-- Blank form -->
               <form class="d-flex flex-column align-items-center">
                 <div class="mb-3 form-width-mx">
@@ -126,6 +125,83 @@
               <!-- Login link -->
               <p class="text-center mt-3">Already have an account? <a href="#" id="loginBtn" class="text-decoration-none" onclick="showLoginModal()">Login</a></p>
               <p class="text-center fs-7 pt-4 text-secondary mb-0">By signing up, you agree to our <a href="#" class="text-decoration-none text-secondary">Terms and Conditions</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- reservation modal -->
+  <div class="modal font-regular" id="reservationModal" style="background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content px-3 py-2 pop-up">
+        <div class="modal-body">
+          <div class="row justify-content-between">
+            <!-- Reservation Form -->
+            <div class="col-md-12">
+              <!-- Close button -->
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <h2 class="text-center font-bold mb-3 pb-4">Table Reservation</h2>
+              <!-- Reservation Form -->
+              <form id="reservationForm" class="d-flex flex-column align-items-center">
+                <div class="mb-3 form-width-mx">
+                  <input type="text" class="form-control" name="first_name" placeholder="First Name">
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <input type="tel" class="form-control" placeholder="Phone Number">
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <input type="date" class="form-control" name="date" placeholder="Select Date">
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <input type="time" class="form-control" name="time" placeholder="Select Time">
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <select class="form-select">
+                    <option value="" selected disabled>Select Occasion</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="anniversary">Anniversary</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <input type="number" class="form-control" name="number_of_guests" placeholder="Number of Guests">
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <label>
+                    <input type="checkbox"> Kids
+                  </label>
+                  <label>
+                    <input type="checkbox"> Senior Citizenship
+                  </label>
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="radio" name="tableOption" id="insideTable" checked>
+                    <label class="form-check-label" for="insideTable">Inside</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="radio" name="tableOption" id="outsideTable">
+                    <label class="form-check-label" for="outsideTable">Outside</label>
+                  </div>
+                </div>
+                <div class="mb-3 form-width-mx">
+                  <label>
+                    <input type="checkbox"> Create an Account
+                  </label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                  <button type="submit" class="btn border border-1 btn-block btn-clr">
+                    <i class="bi bi-box-arrow-in-left pe-1"></i>
+                    Reserve Table
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

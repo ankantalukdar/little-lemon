@@ -4,7 +4,7 @@ var bringToTopBtn = document.getElementById('bringToTopBtn');
 
 // Function to check scroll position and show/hide button
 function checkScroll() {
-  if (window.scrollY > 100) { // Adjust the scroll threshold as needed
+  if (window.scrollY > 100) {
     bringToTopBtn.style.bottom = '25px'; // Show the button
   } else {
     bringToTopBtn.style.bottom = '-100px'; // Hide the button
@@ -15,7 +15,7 @@ function checkScroll() {
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth' // Smooth scroll behavior
+    behavior: 'smooth'
   });
 }
 
@@ -43,8 +43,32 @@ loginBtn.addEventListener('click', function() {
   modal.show();
 });
 
+// Show login modal when order button is clicked
+// **********************************
+// Bug - can't use queryselectorall for some reason
+// **********************************
+var menuBtn = document.getElementById('menuBtn')
+menuBtn.addEventListener('click', function() {
+  var modal = new bootstrap.Modal(loginModal);
+  modal.show();
+});
+
+var menuBtn2 = document.getElementById('menuBtn2')
+menuBtn2.addEventListener('click', function() {
+  var modal = new bootstrap.Modal(loginModal);
+  modal.show();
+});
+
+var menuBtn3 = document.getElementById('menuBtn3')
+menuBtn3.addEventListener('click', function() {
+  var modal = new bootstrap.Modal(loginModal);
+  modal.show();
+});
+
 // Show signup modal when signup button is clicked
 signupBtn.addEventListener('click', function() {
+  event.preventDefault();
+
   var signupModalInstance = new bootstrap.Modal(signupModal);
   signupModalInstance.show();
 
@@ -57,6 +81,8 @@ signupBtn.addEventListener('click', function() {
 
 // Show login modal when login button is clicked
 function showLoginModal() {
+  event.preventDefault();
+
   var loginModalInstance = new bootstrap.Modal(loginModal);
   loginModalInstance.show();
 
@@ -77,35 +103,38 @@ function closeModal() {
 // Login popup function end!!!
 // ----------------------------
 
+
 // Reservation popup start!
 var reservationLink = document.getElementById('reservationLink');
 var reservationModal = document.getElementById('reservationModal');
 
 // Show reservation modal when reservation link is clicked
 reservationLink.addEventListener('click', function(event) {
-  // Prevent the default link behavior (scrolling to the top of the page)
   event.preventDefault();
-  // Create a new modal instance
   var modal = new bootstrap.Modal(reservationModal);
-  // Show the reservation modal
+  modal.show();
+});
+
+// Show reservation modal when reservation button is clicked
+var reservationButton = document.getElementById('reservationButton');
+var reservationModal = document.getElementById('reservationModal');
+reservationButton.addEventListener('click', function() {
+  var modal = new bootstrap.Modal(reservationModal);
   modal.show();
 });
 
 // Close the reservation modal when close button is clicked
 function closeReservationModal() {
-  // Get the reservation modal instance
   var modalInstance = bootstrap.Modal.getInstance(reservationModal);
-  // Hide the reservation modal
   modalInstance.hide();
 }
 
 // Reservation popup end!!!
 // ----------------------------
 
+
 // Function to show confirmation message
 function showConfirmationMessage(firstName, date, time, numberOfGuests) {
-  // Log the reservation details to the console
-  console.log('Reservation Details:', { firstName, date, time, numberOfGuests });
   // Hide the reservation modal if it's open
   var reservationModal = document.getElementById('reservationModal');
   var reservationModalInstance = bootstrap.Modal.getInstance(reservationModal);
@@ -137,17 +166,37 @@ const reservationForm = document.getElementById('reservationForm');
 
 // Add event listener to the reservation form submission
 reservationForm.addEventListener('submit', function(event) {
-  // Prevent the default form submission behavior
   event.preventDefault();
-  // Get form data
   const formData = new FormData(reservationForm);
   const firstName = formData.get('first_name');
   const date = formData.get('date');
   const time = formData.get('time');
   const numberOfGuests = formData.get('number_of_guests');
-  // Show confirmation message
   showConfirmationMessage(firstName, date, time, numberOfGuests);
 });
 
 // Function to show confirmation message end!!!
+// ----------------------------
+
+
+// Funtion to use email instead of phone number and vice versa
+document.getElementById("useEmailButton").addEventListener("click", function() {
+  document.getElementById("emailField").style.display = "block";
+  document.querySelector("input[type='tel']").style.display = "none";
+  document.getElementById("usePhoneNumberButton").style.display = "block";
+  this.style.display = "none";
+  document.getElementById("emailField").required = true;
+  document.querySelector("input[type='tel']").removeAttribute("required");
+});
+
+document.getElementById("usePhoneNumberButton").addEventListener("click", function() {
+  document.getElementById("emailField").style.display = "none";
+  document.querySelector("input[type='tel']").style.display = "block";
+  document.getElementById("useEmailButton").style.display = "block";
+  this.style.display = "none";
+  document.querySelector("input[type='tel']").required = true;
+  document.getElementById("emailField").removeAttribute("required");
+});
+
+// Function to use email instead of phone number and vice versa end!!!
 // ----------------------------

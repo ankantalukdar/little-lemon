@@ -14,19 +14,22 @@
 </head>
 <body>
   <!-- nav start -->
-  <nav class="navbar fs-5 font-regular pt-3 pb-3 sticky-top border-bottom border-1" style="background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);">
+  <nav class="navbar navbar-expand-md font-regular pt-3 pb-3 sticky-top border-bottom border-1" style="background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);">
     <div class="container">
       <a href="#" class="navbar-brand">
-        <img src="assets/images/logo.png" alt="Logo" width="200px" class="logo">
+        <img src="assets/images/logo.png" alt="Logo" width="150px" class="logo">
       </a>
-      <div class="d-flex align-items-center gap-3">
-        <ul class="list-unstyled d-flex gap-3 mb-0">
-          <li><a href="#" class="text-decoration-none text-black">Home</a></li>
-          <li><a href="#menu" class="text-decoration-none text-black">Menu</a></li>
-          <li><a href="#about" class="text-decoration-none text-black">About</a></li>
-          <li><a href="#" class="text-decoration-none text-black" id="reservationLink">Reservation</a></li>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-3 mb-0 align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link text-black">Home</a></li>
+          <li class="nav-item"><a href="#menu" class="nav-link text-black">Menu</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link text-black">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-black" id="reservationLink">Reservation</a></li>
+          <li class="nav-item"><button id="loginBtn" class="btn btn-clr border border-1 px-4 font-bold">Login</button></li>
         </ul>
-        <button id="loginBtn" class="btn btn-clr border border-1 px-4 fs-5 font-bold">Login</button>
       </div>
     </div>
   </nav>
@@ -43,7 +46,7 @@
             <div class="col-md-6 popup-image rounded-start">
             </div>
             <!-- Right side with login options -->
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <!-- Close button -->
               <div class="d-flex justify-content-end">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -79,7 +82,7 @@
               </form>
               <!-- Create account link -->
               <p class="text-center mt-3">Don't have an account? <a href="#" id="signupBtn" class="text-decoration-none" onclick="showSignupModal()">Sign Up</a></p>
-              <p class="text-center fs-7 pt-4 text-secondary">By logging in, you agree to our <a href="#" class="text-decoration-none text-secondary">Terms and Conditions</a>.</p>
+              <p class="text-center text-secondary">By logging in, you agree to our <a href="#" class="text-decoration-none text-secondary">Terms and Conditions</a>.</p>
             </div>
           </div>
         </div>
@@ -96,7 +99,7 @@
             <div class="col-md-6 popup-image rounded-start">
             </div>
             <!-- Right side with signup options -->
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <!-- Close button -->
               <div class="d-flex justify-content-end">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -125,7 +128,7 @@
               </form>
               <!-- Login link -->
               <p class="text-center mt-3">Already have an account? <a href="#" id="loginBtn" class="text-decoration-none" onclick="showLoginModal()">Login</a></p>
-              <p class="text-center fs-7 pt-4 text-secondary mb-0">By signing up, you agree to our <a href="#" class="text-decoration-none text-secondary">Terms and Conditions</a>.</p>
+              <p class="text-center text-secondary mb-0">By signing up, you agree to our <a href="#" class="text-decoration-none text-secondary">Terms and Conditions</a>.</p>
             </div>
           </div>
         </div>
@@ -212,16 +215,16 @@
   <!-- popup modals end -->
   <!-- ---------------------------- -->
   <!-- hero section -->
-  <section id="hero" class="bg-light fs-5 font-regular pt-4 pb-3">
-    <div class="container d-flex justify-content-between pt-5 pb-5">
-      <div class="hero-info">
+  <section id="hero" class="bg-light font-regular pt-3 pb-3">
+    <div class="container d-flex justify-content-between gap-5 pt-5 pb-5 flex-1">
+      <div class="d-flex flex-column align-self-center flex-1">
         <h1 class="font-bold">Little Lemon</h1>
         <p class="font-bold">Based in Chicago, Illinois</p>
         <p>Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-        <button class="btn ll-color border border-1 mt-4 px-4 fs-4 font-bold" id="reservationButton">Reserve a Table</button>
+        <button class="btn ll-color border border-1 mt-2 px-4 font-bold" id="reservationButton">Reserve a Table</button>
       </div>
-      <div>
-        <img src="assets/images/restaurant.jpg" class="" width="500px" alt="">
+      <div class="about-image-wrap flex-1">
+        <img src="assets/images/restaurant.jpg" class="" width="100%" alt="">
       </div>
     </div>
   </section>
@@ -230,12 +233,12 @@
   <!-- menu section -->
   <section id="menu" class="">
     <div class="container d-flex flex-column gap-5 pt-5 pb-5">
-      <div class="d-flex justify-content-between">
-        <h2 class="font-bold">Special</h2>
-        <button class="btn btn-clr border border-1 px-4 fs-4 font-bold" onclick="window.open('assets/menu_compressed.pdf')">Online Menu</button>
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="font-bold mb-0">Special</h2>
+        <button class="btn btn-clr border border-1 px-4 font-bold" onclick="window.open('assets/menu_compressed.pdf')">Online Menu</button>
       </div>
       <div class="card-wrapper">
-        <div class="row row-cols-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 ">
           <div class="col">
             <div class="card bg-light border-0">
               <img src="assets/images/1.jpg" class="card-img-top rounded-top-4" alt="...">
@@ -243,15 +246,15 @@
                 <div class="title-wrapper">
                   <div class="row">
                     <div class="col-8">
-                      <h5 class="card-title fs-3 pb-4 font-bold">Baklava Ice Cream Sandwich</h5>
+                      <h5 class="card-title pb-4 font-bold">Baklava Ice Cream Sandwich</h5>
                     </div>
                     <div class="col-4 d-flex justify-content-end">
-                      <h5 class="card-title fs-3 pb-4 font-bold"><span style="color: red;">$12.99</span></h5>
+                      <h5 class="card-title pb-4 font-bold"><span style="color: red;">$12.99</span></h5>
                     </div>
                   </div>
                 </div>
-                <p class="fs-5 pb-3 font-regular">Vegan baklava ice cream sandwiched between two layers of phyllo pastry, lightly dusted with powdered sugar.</p>
-                <button id="menuBtn" class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold fs-5">
+                <p class="pb-3 font-regular">Vegan baklava ice cream sandwiched between two layers of phyllo pastry, lightly dusted with powdered sugar.</p>
+                <button id="menuBtn" class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold">
                   Order a delivery
                   <span class="bi bi-cart-fill ps-2"></span>
                 </button>
@@ -265,37 +268,37 @@
                 <div class="title-wrapper">
                   <div class="row">
                     <div class="col-8">
-                      <h5 class="card-title fs-3 pb-4 font-bold">Sicilian Caponata Bruschetta</h5>
+                      <h5 class="card-title pb-4 font-bold">Sicilian Caponata Bruschetta</h5>
                     </div>
                     <div class="col-4 d-flex justify-content-end">
-                      <h5 class="card-title fs-3 pb-4 font-bold"><span style="color: red;">$15.99</span></h5>
+                      <h5 class="card-title pb-4 font-bold"><span style="color: red;">$15.99</span></h5>
                     </div>
                   </div>
                 </div>
-                <p class="fs-5 pb-3 font-regular">Grilled bread topped with a savory mixture of eggplant, tomatoes, capers, and balsamic reduction.</p>
-                <button id="menuBtn2" class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold fs-5">
+                <p class="pb-3 font-regular">Grilled bread topped with a savory mixture of eggplant, tomatoes, capers, and balsamic reduction.</p>
+                <button id="menuBtn2" class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold">
                   Order a delivery
                   <span class="bi bi-cart-fill ps-2"></span>
                 </button>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col d-none d-lg-block">
             <div class="card bg-light border-0">
               <img src="assets/images/3.jpg" class="card-img-top rounded-top-4" alt="...">
               <div class="card-body border border-1">
                 <div class="title-wrapper">
                   <div class="row">
                     <div class="col-8">
-                      <h5 class="card-title fs-3 pb-4 font-bold">Mediterranean Breakfast Bowl</h5>
+                      <h5 class="card-titl pb-4 font-bold">Mediterranean Breakfast Bowl</h5>
                     </div>
                     <div class="col-4 d-flex justify-content-end">
-                      <h5 class="card-title fs-3 pb-4 font-bold"><span style="color: red;">$22.99</span></h5>
+                      <h5 class="card-title pb-4 font-bold"><span style="color: red;">$22.99</span></h5>
                     </div>
                   </div>
                 </div>
-                <p class="fs-5 pb-3 font-regular">A hearty breakfast bowl featuring seasoned tofu scramble, roasted potatoes, sautéed spinach, and kalamata olive tapenade.</p>
-                <button id="menuBtn3" class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold fs-5">
+                <p class="fpb-3 font-regular">A hearty breakfast bowl featuring seasoned tofu scramble, roasted potatoes, sautéed spinach, and kalamata olive tapenade.</p>
+                <button id="menuBtn3" class="btn btn-clr border border-1 p-2 px-3 fw-semibold font-bold">
                   Order a delivery
                   <span class="bi bi-cart-fill ps-2"></span>
                 </button>
@@ -309,24 +312,28 @@
   <!-- menu section end -->
   <!-- ---------------------------- -->
   <!-- review section -->
-  <section id="review" class="bg-light fs-5 font-regular">
+  <section id="review" class="bg-light font-regular">
     <div class="container d-flex flex-column gap-5 pt-5 pb-5">
       <h2 class="font-bold text-center">Testimonials</h2>
-      <div class="row gap-3">
-        <div class="col bg-white border border-1 rounded-4">
-          <div class="review-card py-5 px-3">
-            <div class="row pb-4">
+      <div class="container align-self-center row gap-3">
+        <div class="col bg-white border border-1 rounded-4 p-0">
+          <div class="review-card py-4 px-4">
+            <div class="row pb-4 align-items-center rp-wrapper">
               <div class="col-auto">
                 <!-- Image -->
                 <div class="review-image">
-                  <img src="assets/images/r1.jpg" width="80px" alt="User Image">
+                  <img src="assets/images/r1.jpg" alt="User Image">
                 </div>
               </div>
               <div class="col">
                 <!-- Username and Ratings -->
-                <div class="review-details d-flex flex-column align-items-end">
-                  <div class="review-username">Gia Doe</div>
-                  <div class="review-ratings">4.5 Star</div>
+                <div id="rp-username" class="review-details d-flex flex-column align-items-start">
+                  <div class="review-username">
+                    <p class="mb-0">Gia</p>
+                  </div>
+                  <div class="review-ratings">
+                    <p class="mb-0">4.5 Star</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -334,20 +341,24 @@
             <p class="review-text mb-0">Great product, fast shipping, highly recommended!</p>
           </div>
         </div>
-        <div class="col bg-white border border-1 rounded-4">
-          <div class="review-card py-5 px-3">
-            <div class="row pb-4">
+        <div class="col bg-white border border-1 rounded-4 p-0">
+          <div class="review-card py-4 px-4">
+            <div class="row pb-4 align-items-center">
               <div class="col-auto">
                 <!-- Image -->
                 <div class="review-image">
-                  <img src="assets/images/r2.jpg" width="80px" alt="User Image">
+                  <img src="assets/images/r2.jpg" alt="User Image">
                 </div>
               </div>
               <div class="col">
                 <!-- Username and Ratings -->
-                <div class="review-details d-flex flex-column align-items-end">
-                  <div class="review-username">Jane Smith</div>
-                  <div class="review-ratings">5.0 Star</div>
+                <div class="review-details d-flex flex-column align-items-start">
+                  <div class="review-username">
+                    <p class="mb-0">Jane</p>
+                  </div>
+                  <div class="review-ratings">
+                    <p class="mb-0">5.0 Star</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -355,20 +366,24 @@
             <p class="review-text mb-0">Excellent service, will definitely buy again!</p>
           </div>
         </div>
-        <div class="col bg-white border border-1 rounded-4">
-          <div class="review-card py-5 px-3">
-            <div class="row pb-4">
+        <div id="third-review" class="col bg-white border border-1 rounded-4 p-0">
+          <div class="review-card py-4 px-4">
+            <div class="row pb-4 align-items-center">
               <div class="col-auto">
                 <!-- Image -->
                 <div class="review-image">
-                  <img src="assets/images/r3.jpg" width="80px" alt="User Image">
+                  <img src="assets/images/r3.jpg" alt="User Image">
                 </div>
               </div>
               <div class="col">
                 <!-- Username and Ratings -->
-                <div class="review-details d-flex flex-column align-items-end">
-                  <div class="review-username">Emily Johnson</div>
-                  <div class="review-ratings">4.0 Star</div>
+                <div class="review-details d-flex flex-column align-items-start">
+                  <div class="review-username">
+                    <p class="mb-0">Emily</p>
+                  </div>
+                  <div class="review-ratings">
+                    <p class="mb-0">4.0 Star</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -376,9 +391,9 @@
             <p class="review-text mb-0">The product quality is good, but the delivery was a bit slow.</p>
           </div>
         </div>
-        <div class="col bg-white border border-1 rounded-4">
-          <div class="review-card py-5 px-3">
-            <div class="row pb-4">
+        <div id="last-review" class="col bg-white border border-1 rounded-4 p-0">
+          <div class="review-card py-4 px-4">
+            <div class="row pb-4 align-items-center">
               <div class="col-auto">
                 <!-- Image -->
                 <div class="review-image">
@@ -387,9 +402,13 @@
               </div>
               <div class="col">
                 <!-- Username and Ratings -->
-                <div class="review-details d-flex flex-column align-items-end">
-                  <div class="review-username">Michael Brown</div>
-                  <div class="review-ratings">4.5 Star</div>
+                <div class="review-details d-flex flex-column align-items-start">
+                  <div class="review-username">
+                    <p class="mb-0">Michael</p>
+                  </div>
+                  <div class="review-ratings">
+                    <p class="mb-0">4.5 Star</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -403,9 +422,9 @@
   <!-- review section end -->
   <!-- ---------------------------- -->
   <!-- about section -->
-  <section id="about" class="fs-5 font-regular">
+  <section id="about" class="font-regular">
     <div class="container d-flex justify-content-between gap-5 pt-5 pb-5">
-      <div class="d-flex flex-column align-self-center hero-info">
+      <div class="d-flex flex-column align-self-center flex-1">
         <div>
           <h2 class="font-bold">Little Lemon</h2>
           <p class="font-bold">Chicago</p>
@@ -416,23 +435,24 @@
           </p>
         </div>
       </div>
-      <div>
-        <img src="assets/images/restaurant.jpg" width="500px" class="" alt="" srcset="">
+      <div class="about-image-wrap flex-1">
+        <img src="assets/images/restaurant.jpg" width="100%" class="about-image" alt="" srcset="">
       </div>
     </div>
   </section>
   <!-- about section end -->
   <!-- ---------------------------- -->
   <!-- footer -->
-  <footer class="bg-light font-regular fs-5 border-top border-1">
+  <footer class="bg-light font-regular border-top border-1">
     <div class="container pt-5 pb-5">
-      <div class="row gap-4">
-        <div class="col">
-          <div>
-            <img src="assets/images/footer logo.png" width="65" alt="">
+      <div class="row">
+        <div class="col-6 col-lg-3">
+          <div class="d-flex flex-column gap-2">
+            <img src="assets/images/footer logo.png" width="40" alt="">
+            <p class="text-secondary">&#169; <span id="currentYear"></span> Little Lemon</p>
           </div>
         </div>
-        <div class="col">
+        <div class="col-6 col-lg-3">
           <h5 class="font-bold">Navigation</h5>
           <ul class="list-unstyled">
             <li><a href="#" class="text-decoration-none link-secondary">Home</a></li>
@@ -440,13 +460,13 @@
             <li><a href="#about" class="text-decoration-none link-secondary">About</a></li>
           </ul>
         </div>
-        <div class="col">
+        <div class="col-6 col-lg-3">
           <h5 class="font-bold">Contact</h5>
           <p class="no-margin text-secondary">Little Lemon Restaurant, Chicago, IL, 60601</p>
           <p class="no-margin text-secondary">Phone: (555) 555-1234</p>
           <p class="no-margin text-secondary">Email: <a href="mailto:info@example.com" class="text-decoration-none link-secondary">reach@littlelemon.com</a></p>
         </div>
-        <div class="col">
+        <div class="col-6 col-lg-3">
           <h5 class="font-bold">Social Media</h5>
           <ul class="list-unstyled">
             <li><a href="https://www.facebook.com/" class="text-decoration-none link-secondary">Facebook</a></li>

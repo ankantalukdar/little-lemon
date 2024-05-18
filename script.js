@@ -1,3 +1,6 @@
+var currentYear = new Date().getFullYear();
+document.getElementById("currentYear").textContent = currentYear;
+
 // Bring to top function start!!!
 // Get the "bring to top" button element
 var bringToTopBtn = document.getElementById('bringToTopBtn');

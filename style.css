@@ -10,10 +10,6 @@
   font-style: normal;
 }
 
-.fs-7 {
-  font-size: 0.5rem;
-}
-
 .popup-image {
   background-image: url('assets/images/pop-up-bg.jpg');
   background-size: cover;
@@ -21,6 +17,12 @@
   width: 100%;
   max-width: 355px;
   height: 480px;
+}
+
+@media (max-width: 991px) {
+  .popup-image {
+    display: none;
+  }
 }
 
 .bring-to-top {
@@ -52,7 +54,13 @@
 }
 
 .hero-info {
-  max-width: 33.33%;
+  max-width: 50%;
+}
+
+@media (min-width: 1200px) {
+  .hero-info {
+    max-width: 33.33%;
+  }
 }
 
 .card {
@@ -78,9 +86,110 @@
 }
 
 .review-image img {
+  width: 100%;
   border-radius: 50px;
+}
+
+@media (min-width: 576px) {
+  .review-image img {
+    width: 55px;
+  }
+}
+
+@media (min-width: 768px) {
+  .review-image img {
+    width: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  .review-image img {
+    width: 55px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .review-image img {
+    width: 70px;
+  }
+}
+
+/* hides last review card if the screen width is less than 992px */
+@media (max-width: 768px) {
+  #third-review {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  #last-review {
+    display: none;
+  }
 }
 
 .form-width-mx {
   width: 80%;
+}
+
+.about-image {
+  align-items: center;
+}
+
+.about-image-wrap {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .about-image-wrap {
+    display: grid;
+    place-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  #about img {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #about img {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 992px) {
+  #hero img {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #hero img {
+    max-width: 500px;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.custom-toggler {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gold;
+}
+
+.custom-toggler:focus, .custom-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(0, 0, 0, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
 }

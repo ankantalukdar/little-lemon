@@ -1,6 +1,6 @@
 <div style="display: flex; align-items: center; border-bottom: 1px solid grey;">
-  <div style="flex: 70%;">
-    <h1 style="border-bottom: none;">Little Lemon Website</h1>
+  <div style="flex: 50%;">
+    <h1 style="border-bottom: none;">Little Lemon</h1>
   </div>
   <div style=>
 
@@ -12,4 +12,14 @@
 <div>
   <h2 style="border-bottom: none;">Project Description</h2>
   <p>This project was developed as part of Meta's Coursera Front-End Development course, serving as the culmination of the course.</p>
+</div>
+
+<div>
+  <h2>Technologies Used</h2>
+  <ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>Bootstrap</li>
+  </ul>
 </div>

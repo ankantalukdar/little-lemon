@@ -90,6 +90,12 @@
   border-radius: 50px;
 }
 
+@media (max-width: 576px) {
+  .review-image img {
+    width: 70px;
+  }
+}
+
 @media (min-width: 576px) {
   .review-image img {
     width: 55px;
@@ -114,7 +120,12 @@
   }
 }
 
-/* hides last review card if the screen width is less than 992px */
+@media (max-width: 576px) {
+  #second-review {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   #third-review {
     display: none;
@@ -129,6 +140,13 @@
 
 .form-width-mx {
   width: 80%;
+}
+
+
+@media (min-width: 768px) {
+  .mobile-image {
+    display: none;
+  }
 }
 
 .about-image {
